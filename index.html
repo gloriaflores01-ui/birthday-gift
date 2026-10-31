@@ -1,0 +1,172 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Happy Birthday, Kate! 💛</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    body {
+      background: linear-gradient(135deg, #fff176, #ffd54f, #ffecb3);
+    }
+
+    .birthday-card {
+      background: rgba(255, 255, 255, 0.94);
+      border: 2px solid #ffe082;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(25px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .flower {
+      display: inline-block;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    button {
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-4 py-8">
+
+  <div class="birthday-card shadow-2xl rounded-3xl p-6 sm:p-8 max-w-md w-full text-center">
+
+    <div class="text-3xl mb-3">
+      🌻 ✨ 🌼
+    </div>
+
+    <h1 class="text-3xl sm:text-4xl font-extrabold text-yellow-600 mb-3">
+      Happy Birthday, Kate! 🎂
+    </h1>
+
+    <p class="text-base sm:text-lg text-yellow-800 font-medium mb-6">
+      To my wonderful best friend! 💛
+    </p>
+
+    <div class="text-5xl sm:text-6xl mb-6 flower">
+      🎉🎈🎁
+    </div>
+
+    <p class="text-gray-700 text-base sm:text-lg leading-relaxed mb-5">
+      Dear Kate,
+      <br><br>
+
+      Life is a little brighter and a lot more beautiful
+      with a friend like you in it. I'm so grateful to have
+      you in my life. Thank you for the laughter, the
+      memories, the little moments, and for simply being YOU.
+      <br><br>
+
+      May your special day be filled with endless smiles,
+      genuine happiness, unexpected blessings, and all the
+      love your heart can hold.
+      <br><br>
+
+      Never forget how special you are. You deserve all
+      the beautiful things life has to offer!
+    </p>
+
+    <div class="bg-yellow-50 rounded-2xl p-4 mb-5">
+      <p class="text-yellow-800 italic text-sm sm:text-base">
+        "Good friends are like sunshine.
+        They make even the ordinary days brighter."
+      </p>
+    </div>
+
+    <p class="text-xl font-bold text-yellow-600 mb-5">
+      Cheers to more memories, laughter, and adventures! 🥂
+    </p>
+
+    <button
+      onclick="celebrate()"
+      class="px-6 py-3 bg-yellow-500 text-white font-bold rounded-xl shadow-lg hover:bg-yellow-600 w-full sm:w-auto">
+
+      Click for a Surprise, Kate! 🎊
+
+    </button>
+
+    <p id="surprise"
+      class="mt-5 text-lg sm:text-xl font-bold text-yellow-700 hidden">
+
+      💛 You're one of a kind, Kate! I hope this year brings
+      you everything you've been wishing for.
+      <br><br>
+      Love you, Bestie! 🌻🎂
+    </p>
+
+    <div class="mt-7 text-sm text-yellow-700">
+      Made with love, just for you. 💛
+    </div>
+
+    <div class="text-2xl mt-3">
+      🌻 💛 🌻
+    </div>
+
+  </div>
+
+  <script>
+
+    function celebrate() {
+
+      document.getElementById('surprise').classList.remove('hidden');
+
+      // Golden birthday confetti!
+      confetti({
+        particleCount: 180,
+        spread: 100,
+        origin: { y: 0.6 },
+        colors: ['#FFD700', '#FFC107', '#FFF176',
+                 '#FFFFFF', '#FF9800', '#F9A825']
+      });
+
+      // Confetti from both sides
+      setTimeout(() => {
+
+        confetti({
+          particleCount: 100,
+          spread: 120,
+          origin: { x: 0.1 },
+          colors: ['#FFD700', '#FFC107', '#FFFFFF']
+        });
+
+        confetti({
+          particleCount: 100,
+          spread: 120,
+          origin: { x: 0.9 },
+          colors: ['#FFD700', '#FFC107', '#FFFFFF']
+        });
+
+      }, 300);
+
+    }
+
+  </script>
+
+</body>
+</html>
